@@ -2,7 +2,7 @@
 
 namespace ScanbotSDKMVVM.Services
 {
-    public interface IScanbotSDKCervice
+    public interface IScanbotSDKService
 	{
         void Initialize();
         Task<BarcodeResultBundle> ScanBarcode();

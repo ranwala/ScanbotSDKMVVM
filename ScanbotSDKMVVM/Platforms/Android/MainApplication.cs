@@ -1,7 +1,6 @@
 ﻿using Android.App;
 using Android.Runtime;
 using BarcodeSDK.MAUI.Droid.Services;
-using IO.Scanbot.Sdk.Barcode_scanner;
 
 namespace ScanbotSDKMVVM;
 

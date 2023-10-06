@@ -11,7 +11,6 @@ public partial class App : Application
         InitializeSDK();
 
         MainPage = new AppShell();
-
     }
 
     private void InitializeSDK()
@@ -19,6 +18,5 @@ public partial class App : Application
         var scanbotsdkService = DependencyService.Get<ScanbotSDKService>();
         scanbotsdkService.Initialize();
     }
-
 }
 

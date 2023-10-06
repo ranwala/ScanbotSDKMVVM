@@ -3,7 +3,7 @@ using BarcodeSDK.MAUI.Models;
 
 namespace ScanbotSDKMVVM.Services
 {
-    public class ScanbotSDKService : IScanbotSDKCervice
+    public class ScanbotSDKService : IScanbotSDKService
 	{
         private const string LICENSE_KEY = null;
 

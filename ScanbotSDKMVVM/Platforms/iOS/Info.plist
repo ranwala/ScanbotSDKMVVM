@@ -29,6 +29,6 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Please allow the camera access</string>
+	<string>Please allow the camera permissions.</string>
 </dict>
 </plist>
