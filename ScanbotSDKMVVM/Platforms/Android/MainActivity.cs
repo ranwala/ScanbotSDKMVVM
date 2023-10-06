@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using BarcodeSDK.MAUI.Droid.Services;
 
 namespace ScanbotSDKMVVM;
 
@@ -10,7 +11,7 @@ public class MainActivity : MauiAppCompatActivity
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-        BarcodeSDK.MAUI.Droid.Services.DependencyManager.RegisterActivity(this);
+        DependencyManager.RegisterActivity(this);
     }
 }
 

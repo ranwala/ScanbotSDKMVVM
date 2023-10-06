@@ -8,9 +8,10 @@ public partial class App : Application
 	{
 		InitializeComponent();
         DependencyService.Register<ScanbotSDKService>();
-		MainPage = new AppShell();
-
         InitializeSDK();
+
+        MainPage = new AppShell();
+
     }
 
     private void InitializeSDK()

@@ -5,7 +5,9 @@ namespace ScanbotSDKMVVM.Services
 {
     public class ScanbotSDKService : IScanbotSDKCervice
 	{
-		public ScanbotSDKService()
+        private const string LICENSE_KEY = null;
+
+        public ScanbotSDKService()
 		{
 		}
 
@@ -13,7 +15,7 @@ namespace ScanbotSDKMVVM.Services
         {
             var options = new InitializationOptions
             {
-                LicenseKey = null,
+                LicenseKey = LICENSE_KEY,
                 LoggingEnabled = true,
                 ErrorHandler = (status, feature) =>
                 {
@@ -26,7 +28,7 @@ namespace ScanbotSDKMVVM.Services
         public async Task<BarcodeResultBundle> ScanBarcode()
         {
             var configuration = new BarcodeScannerConfiguration();
-            return await BarcodeSDK.MAUI.ScanbotBarcodeSDK.BarcodeService?.OpenBarcodeScannerView(configuration);
+            return await BarcodeSDK.MAUI.CommonSDKServices.BarcodeService?.OpenBarcodeScannerView(configuration);
         }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using Android.App;
 using Android.Runtime;
+using BarcodeSDK.MAUI.Droid.Services;
+using IO.Scanbot.Sdk.Barcode_scanner;
 
 namespace ScanbotSDKMVVM;
 
-[Application]
+[Application(LargeHeap = true)]
 public class MainApplication : MauiApplication
 {
 	public MainApplication(IntPtr handle, JniHandleOwnership ownership)
@@ -11,13 +13,12 @@ public class MainApplication : MauiApplication
 	{
 	}
 
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+	protected override MauiApp CreateMauiApp() => RegisterDependencies();
 
-    public override void OnCreate()
+    private MauiApp RegisterDependencies()
     {
-        base.OnCreate();
-
-        BarcodeSDK.MAUI.Droid.Services.DependencyManager.RegisterServices();
+        DependencyManager.RegisterServices();
+        return MauiProgram.CreateMauiApp();
     }
 }
 
