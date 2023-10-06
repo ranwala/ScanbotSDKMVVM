@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ScanbotSDKMVVM.MainPage"
+             Title="Scanbot SDK MVVM">
+    <Grid
+        Padding="20"
+        RowSpacing="20"
+        HorizontalOptions="Center"
+        VerticalOptions="FillAndExpand"
+        RowDefinitions="Auto, *">
+
+        <Button
+            Text="Scan Cocument"
+            Command="{Binding DocumentScanCommand}"/>
+
+        <ListView
+            Grid.Row="1"
+            SeparatorVisibility="Default"
+            ItemsSource="{Binding BarcodeList, Mode=TwoWay}"
+            HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Margin="0,10">
+                            <Label
+                                Text="{Binding BarcodeFormat}"
+                                FontSize="Subtitle"
+                                TextColor="Black"/>
+
+                            <Label
+                                Text="{Binding BarcodeText}"
+                                FontSize="Body"
+                                TextColor="Gray"/>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+
+</ContentPage>
+
