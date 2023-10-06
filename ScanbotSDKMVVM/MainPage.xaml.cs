@@ -10,5 +10,3 @@ public partial class MainPage : ContentPage
 		this.BindingContext = new MainPageViewModel();
 	}
 }
-
-

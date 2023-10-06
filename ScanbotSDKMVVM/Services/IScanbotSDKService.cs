@@ -8,4 +8,3 @@ namespace ScanbotSDKMVVM.Services
         Task<BarcodeResultBundle> ScanBarcode();
     }
 }
-

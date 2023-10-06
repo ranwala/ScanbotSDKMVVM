@@ -9,10 +9,21 @@
         HorizontalOptions="Center"
         VerticalOptions="FillAndExpand"
         RowDefinitions="Auto, *">
-
+       <Grid Grid.Row="0"
+             ColumnDefinitions="*, Auto">
         <Button
-            Text="Scan Cocument"
+            Grid.Column="0"
+            Text="Scan Document"
+            HorizontalOptions="Fill"
             Command="{Binding DocumentScanCommand}"/>
+        <Button
+            Grid.Column="1"
+            Margin="10,0,0,0"
+            Text="Clear"
+            HorizontalOptions="End"
+            BackgroundColor="Red"
+            Command="{Binding ClearResultCommand}"/>
+        </Grid>
 
         <ListView
             Grid.Row="1"

@@ -6,4 +6,3 @@
         public string BarcodeText { get; set; }
     }
 }
-

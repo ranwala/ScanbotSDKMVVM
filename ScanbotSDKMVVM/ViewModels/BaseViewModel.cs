@@ -31,4 +31,3 @@ namespace ScanbotSDKMVVM.ViewModels
         #endregion
     }
 }
-

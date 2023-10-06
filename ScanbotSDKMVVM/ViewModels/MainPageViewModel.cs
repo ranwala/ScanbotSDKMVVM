@@ -10,6 +10,7 @@ namespace ScanbotSDKMVVM.ViewModels
         private ScanbotSDKService scanbotsdkService;
 
         public Command DocumentScanCommand { get; }
+        public Command ClearResultCommand { get; }
 
         public ObservableCollection<BarcodeModel> BarcodeList { get; set; }
 
@@ -18,12 +19,18 @@ namespace ScanbotSDKMVVM.ViewModels
             scanbotsdkService = DependencyService.Get<ScanbotSDKService>();
             BarcodeList = new ObservableCollection<BarcodeModel>();
             DocumentScanCommand = new Command(OnScanClicked);
+            ClearResultCommand = new Command(OnClearClicked);
         }
 
         private async void OnScanClicked()
         {
             BarcodeResultBundle response = await scanbotsdkService.ScanBarcode();
             GenerateBarcodeList(response.Barcodes);
+        }
+
+        private void OnClearClicked(object obj)
+        {
+            BarcodeList?.Clear();
         }
 
         private void GenerateBarcodeList(List<Barcode> barcodes)
