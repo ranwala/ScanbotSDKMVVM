@@ -25,6 +25,13 @@ namespace ScanbotSDKMVVM.ViewModels
         private async void OnScanClicked()
         {
             BarcodeResultBundle response = await scanbotsdkService.ScanBarcode();
+
+            if (response.Status == BarcodeSDK.MAUI.Constants.OperationResult.Canceled)
+            {
+                await Application.Current.MainPage.DisplayAlert("Cancelled", "Scan barcode has been cancelled", "Ok");
+                return;
+            }
+
             GenerateBarcodeList(response.Barcodes);
         }
 
